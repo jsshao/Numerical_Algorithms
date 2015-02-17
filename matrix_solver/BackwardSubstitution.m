@@ -20,5 +20,9 @@ for i = rows:-1:1
 		x(i) = x(i) - LU(i, j) * x(j);
 	end 
 
+    % Error check
+    if LU(i, i) == 0
+        error('LU has 0 entry in diagonal');
+    end
 	x(i) = x(i) / LU(i, i);
 end

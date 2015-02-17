@@ -28,6 +28,7 @@ if init_norm == 0
 end
 
 % Iteratively solve for x_new
+num_iterations = 0;
 while norm / init_norm >= tol
 	for i = 1:rows
 		x_new(i) = b(i);
@@ -59,6 +60,12 @@ while norm / init_norm >= tol
 
     % Reset x_old for next iteration
 	x_old = x_new;
+    
+    % Check number of iterations
+    num_iterations = num_iterations + 1;
+    if num_iterations > 1000000
+        error('Number of iterations exceeded 1e6');
+    end
 end
 
 x = x_new;
