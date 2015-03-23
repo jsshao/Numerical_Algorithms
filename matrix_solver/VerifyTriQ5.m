@@ -1,6 +1,5 @@
 function time = VerifyTriQ5(n)
 
-start_time = cputime;
 
 % Initialize a, b, c
 a = ones(n-1);
@@ -16,6 +15,8 @@ for i = 1:(n-1)
     k(i) = f(i / n);
 end
 k = k * h^2;
+
+start_time = cputime;
 
 % Solve using TriDiagonal LU
 x = TriDiagonalSolve(a, b, c, k);
