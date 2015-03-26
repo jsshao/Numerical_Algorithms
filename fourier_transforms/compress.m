@@ -17,7 +17,7 @@ for col = 1:s(3)
     for x = 1:s(1)/8
         for y = 1:s(2)/8
             subarray = X((x*8-7):(x*8), (y*8-7):(y*8), col);
-            trans = fft2(subarray);
+            trans = fft2(single(subarray));
             
             for j = 1:8
                 for k = 1:8
