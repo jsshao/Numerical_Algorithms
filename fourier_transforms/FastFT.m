@@ -34,5 +34,3 @@ else
         F(n*2) = 1/2*H(n);
     end
 end
-
-
