@@ -1,8 +1,8 @@
 function [result,errorEstimate,levelsUsed]= Automatic(a,b,nInitial,F,tolerance,maxLevels)
 
 % Check the initial n is a power of 2
-if 2^(floor(log2(nInitial))) ~= nInitial 
-    error('Initial number of intervals is not a power of 2');
+if (nInitial mod 2) == 1 
+    error('Initial number of intervals is not a multiple of 2');
 end
 
 % Simpson aprox for nInitial / 2 used for error calculation
