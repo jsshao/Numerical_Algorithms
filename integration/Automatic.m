@@ -1,7 +1,7 @@
 function [result,errorEstimate,levelsUsed]= Automatic(a,b,nInitial,F,tolerance,maxLevels)
 
-% Check the initial n is a power of 2
-if (nInitial mod 2) == 1 
+% Check the initial n is a multiple of 2
+if mod(nInitial, 2) == 1 
     error('Initial number of intervals is not a multiple of 2');
 end
 
